@@ -1,0 +1,23 @@
+extends layout
+
+block content
+	- var r = JSON.parse(request)
+	- var c = JSON.parse(child)
+	- var name = c.name
+	- var img = c.avatar
+	- var article = r.article
+	- var size = r.size
+	- var color = r.color
+	- var status = r.status
+	a(href='/org/view/' + r.org_id) #{c.org_name}
+	h2 #{name} is requesting #{article}
+	h3 Size #{size} in #{color}
+	h3 Status: #{status}
+	img(style='msrgin:auto;display:block;text-align:center', src= img)
+	br
+	- if (logged && logged.type == "donor") {
+		a(class='calltobtn', href='/see/n/' + r._id + '/confirm/') Donate
+	- } else if (logged) {
+	- } else {
+		a(href='/register/', class='indxResBotBtn', style="float:left;margin-top:30px") Register to donate
+	- }

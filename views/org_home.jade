@@ -1,0 +1,12 @@
+extends layout
+
+block content
+  img(src= logo, height=150, class='logoimg')
+  - var o = JSON.parse(org);
+  div(class='welcome') Welcome #{o.name}
+  div(class='stats')
+    div Children: !{children}
+    div Accepted donations : !{accepted}
+  br
+  a(href='/org/manage', class='manageBtns') Manage Roster
+  a(href='/org/pending', class='manageBtns') Manage Donations

@@ -1,0 +1,22 @@
+extends layout
+
+block content
+  div(class='welcome') Here are your pending donations!
+  - var k = JSON.parse(pending)
+  - for (var i=0,len=k.length;i<len;i++){
+    div(class='pendbox')
+      div(class='sentto')
+        | To: 
+        a(href='/org/manage/child/' + k[i].child_id)= k[i].child_name
+      div(class='sentfrom') From: #{k[i].donor.name.first}
+      div(class='sentitem')
+        | Item: 
+        a(href='/see/' + k[i]._id) #{k[i].color} #{k[i].article}
+      a(class='indxResBotBtn', href='/org/pending/decline/' + k[i]._id) no-show
+      a(class='indxResBotBtn', href='/org/pending/accept/' + k[i]._id) Report arrival
+  - }
+  - if (k.length == 0)
+    div No pending
+  br
+  br
+  a(href='/org/manage', class='manageBtns') Manage Roster

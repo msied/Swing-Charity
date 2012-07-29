@@ -1,0 +1,32 @@
+doctype 5
+html
+	head
+		title= title
+		link(rel='stylesheet', href='/stylesheets/style.css')
+		block header
+	body
+	div(class='center')
+		div(class='top')
+			- if (logged == false){
+				div(class='swing_menu')
+					a(href='/howitworks') how it works 
+					a(href='/organizations/') partners 
+					a(href='/login') log in
+			- } else if (logged.type == "org") {
+				div(class='swing_menu')
+					a(href='/logout/') log out
+					a(href='/see/') see
+					a(href='/org/')= logged.name
+			- } else {
+				div(class='swing_menu')
+					a(href='/logout/') log out
+					a(href='/see/') see
+					a(href='/org/')= logged.name
+			- }
+			a(href='/')
+				div(class='swing_logo')
+			br
+			div(class='swing_slogan') connecting children in need with donations they'll cherish
+		block hero
+		div(class='content_pane')
+			block content

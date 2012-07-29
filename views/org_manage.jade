@@ -1,0 +1,20 @@
+extends layout
+
+block content
+	- var o = JSON.parse(org);
+	div(class='welcome') Welcome #{o.name}
+	a(href='/org/manage/add/', class='addKid') Add a child
+	div(class='tableHolder')
+		div(class='tableHead')
+			div(class='tkname') Name
+			div(class='tkpending') Pending
+		- var k = JSON.parse(kids)
+		- for (var i=0,len=k.length;i<len;i++){
+			div(class='spacer')
+				div(class='tkname')
+					div(class='tkimg', style="background-image:url('" + k[i].avatar + "')")
+					a(href='/org/manage/child/' + k[i]._id + '/')= k[i].name
+				div(class='tkpending')= k[i].wishlist.length
+		- } 
+	br
+	a(href='/org/pending', class='manageBtns') Manage Donations

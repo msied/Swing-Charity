@@ -1,0 +1,7 @@
+extends layout
+
+block content
+	- var o = JSON.parse(org)
+	h1= title
+	div= org
+	img(src= o.logo)

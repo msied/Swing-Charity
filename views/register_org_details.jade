@@ -1,0 +1,23 @@
+extends layout
+
+block header
+  script(src="https://api.filepicker.io/v0/filepicker.js")
+  script
+    filepicker.setKey('AuFp5flEgQ4q3eZLTePGiz');
+
+block content
+  h2= organization
+  - if ('undefined' !== typeof errors && errors.length)
+    ul#errors
+      - each error in errors
+        li.error= error
+  form(action='/register/org/details', method='POST')
+    #org-address
+      textarea(type='text', name='address', placeholder='Shipping address (for clothes)')
+    #org-name
+      textarea(type='text', name='details', placeholder='Organization description')
+    br
+    #img
+      input(type="filepicker", name="logo")
+    #submit
+      input(type='submit') Register

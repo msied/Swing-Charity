@@ -1,0 +1,44 @@
+extends layout
+
+block header
+  script(src="https://api.filepicker.io/v0/filepicker.js")
+  script
+    filepicker.setKey('AuFp5flEgQ4q3eZLTePGiz');
+
+block content
+  h2 Add a kid
+  - if ('undefined' !== typeof errors && errors.length)
+    ul#errors
+      - each error in errors
+        li.error= error
+  form(action='/org/manage/add/', method='POST')
+    #name
+      input(type='text', name='name', placeholder="Child's name")
+    #age
+      input(type='text', name='age', placeholder="Child's age")
+    #gender
+      div Gender
+      select(type='text', name='gender')
+        option M
+        option F
+    #top_size
+      div Top size
+      select(type='text', name='top_size')
+        option XS
+        option S
+        option M
+        option L
+        option XL
+        option XXL
+    #pant_size
+      input(type='text', name='pant_size', placeholder="Pant size")
+    #shoe_size
+      input(type='text', name='shoe_size', placeholder="Shoe size")
+    #details
+      textarea(type='text', name='details', placeholder='Additional details (optional)')
+    br
+    #img
+      div Child's photo
+      input(type="filepicker", name="avatar")
+    #submit
+      input(type='submit') Add Child

@@ -1,0 +1,27 @@
+extends layout
+
+block hero
+  div(class='hero')
+    div(class='hero_left')
+    div(class='hero_mid')
+    div(class='hero_right')
+      | "my new clothes make me feel happy at school"
+      br
+      div(class="devon") -- Devon, 8
+      br
+      a(class='calltobtn', href='/register/') Make a Difference
+  div(class='underHero')
+
+block content
+  - var w = JSON.parse(wishes)
+  - for (var i=0,len=w.length;i<len;i++){
+    div(class='indxResult')
+      div(class='indxFace', style="background-image:url('" + w[i].child_img + "')")
+      div(class='indxResWrap')
+        div(class='indxResPrev')
+          div #{w[i].child_name} is looking for
+          div - a #{w[i].color} #{w[i].article}
+        div(class='indxResBot')
+          a(href= '/org/view/' + w[i].org_id, class='indxBotSponsor')= w[i].org_name
+          a(href='/see/' + w[i]._id, class='indxResBotBtn') DONATE
+  - }

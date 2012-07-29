@@ -1,0 +1,13 @@
+extends layout
+
+block content
+  div(class='welcome') Confirm donation
+  div(class='thanks')
+    | Thanks for volunteering!
+    | You've signed up to donate the following:
+  - var w = JSON.parse(wish)
+  img(width=200, src= w.child_img)
+  div(class='confitem') #{w.color} #{w.article} in size #{w.size}
+  form(action='/see/' + w._id + '/fulfill/', method='POST')
+    button(class='manageBtns', style="border:1px solid white", type='submit', value='Donate') DONATE
+  a(class='manageBtns', href='/see/') Cancel

@@ -1,0 +1,13 @@
+extends layout
+
+block content
+	- var n = JSON.parse(needs)
+	- for (var i=0,len=n.length;i<len;i++){
+		a(href='/see/' + n[i]._id + '/')
+			div(class='listing')
+				div(class='listingimg', style="background-image:url('" + n[i].child_img + "')")
+				div(class='listingname')= n[i].child_name
+				div(class='listingorg')= n[i].org_name
+				div(class='listingarticle')= n[i].article
+				div(class='listingcolor')= n[i].color
+	- }

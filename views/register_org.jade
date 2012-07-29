@@ -1,0 +1,26 @@
+extends layout
+
+block content
+  h2 Register as Organization
+  - if ('undefined' !== typeof errors && errors.length)
+    ul#errors
+      - each error in errors
+        li.error= error
+  form(action='/register/org', method='POST')
+    #org-name
+      input(type='text', name='organization', placeholder='Organization Name')
+    #first-name
+      input(type='text', name='first_name', placeholder='Admin First Name')
+    #last-name
+      input(type='text', name='last_name', placeholder='Admin Last Name')
+    #email
+      input(type='text', name='email', placeholder='Admin Email')
+    #phone
+      input(type='text', name='phone', placeholder='Admin Phone Number')
+    br
+    #password
+      input(type='password', name='password', placeholder='Password')
+    #password_r
+      input(type='password', name='password_r', placeholder='Repeat password')
+    #submit
+      input(type='submit') Register

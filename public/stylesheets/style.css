@@ -1,0 +1,353 @@
+body {
+  padding:0;margin:0;
+  font-family: Hero, "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: rgb(254,117,6);
+  text-decoration: none
+}
+	a:hover{
+		text-decoration: underline
+	}
+
+.center{
+	margin:0 auto;
+	width:980px;
+	height:400px;
+}
+
+	.top{
+		height:140px;
+		box-shadow:0 2px 4px -2px black;
+			font-family: "Hero Light";
+	}
+
+		.swing_logo{
+			display: inline-block;
+			width: 227px;
+			height: 77px;
+			background:white url('../images/swing_logo.png') no-repeat 0 0;
+			margin:25px 0 0 20px;
+		}
+
+		.swing_menu{
+			display: inline-block;
+			float:right;
+			width:400px;
+			height:20px;
+			text-align: right;
+			margin:25px 20px 0 0;
+		}
+
+			.swing_menu a{
+				display: inline-block;
+				font-size:22px;
+				font-family: "Hero Light";
+				text-decoration: none;
+				color:#444;
+				letter-spacing:0px;
+			}
+				.swing_menu a:hover{
+					text-decoration: underline
+				}
+
+				.swing_menu a:before{
+					content:'|';
+					margin:0 10px;
+					color:#999;
+				}
+
+				.swing_menu a:first-child:before{
+					content:'';
+				}
+
+				.swing_menu a:nth-child(3){
+					color: rgb(254,117,6)
+				}
+
+		.swing_slogan{
+			display:inline-block;
+			font-size:17px;
+			color:#777;
+			margin-left:60px;
+			margin-top:-20px;
+		}
+
+	.hero{
+		height:360px;
+	}
+
+		.hero_left{
+			width:55px;
+			height:100%;
+			display: inline-block;
+			background-color:rgb(254,117,6);
+		}
+
+		.hero_mid{
+			height:100%;
+			display: inline-block;
+			width: 500px;
+			background:white url('../images/swing_hero.png');
+			background-size: cover;
+		}
+
+		.hero_right{
+			height:100%;
+			display: inline-block;
+			width:425px;
+			float:right;
+			padding:25px;
+			box-sizing:border-box;
+			moz-box-sizing:border-box;
+			background-color: white;
+			font-size:36px;
+			text-align: left;
+			color:rgb(0,6,76);
+			line-height: 46px;
+			font-family: "Hero Light"
+		}
+
+			.devon{
+				float:right;
+				color:#888;
+				font-size:30px;
+			}
+
+			.calltobtn{
+				line-height:100px;
+				text-align: center;
+				background-color: rgb(30,185,145);
+				color:white;
+				margin-top:35px;
+				border-radius: 5px;
+				font-size:34px;
+				box-shadow:0 1px 4px -1px black;
+				text-shadow:0 0 1px black;
+				cursor:pointer;
+				display: block;
+				text-decoration: none
+			}
+				.calltobtn:hover{
+					box-shadow:0 1px 3px 0px black;
+					text-shadow:0 0 2px black;
+				}
+
+	.underHero{
+		height:30px;
+		margin-top:3px;
+		background-color: rgb(151,200,245);
+	}
+
+	.content_pane{
+		padding:20px;
+	}
+
+		.indxResult{
+			width:400px;
+			height:120px;
+			display: inline-block;
+			margin:20px 35px 0 35px;
+		}
+			.indxFace{
+				display: inline-block;
+				width:105px;
+				height:110px;
+				background-size:cover;
+				border-radius:6px;
+			}
+			.indxResWrap{
+				display: inline-block;
+				width:280px;
+				font-family: Hero;
+				float:right;
+				border-radius:3px;
+			}
+				.indxResWrap .indxResPrev{
+					height:50px;
+					color:rgb(0,6,76);
+					padding:5px 30px 0 30px;
+					background-color: rgba(0,0,0,0.075)
+				}
+
+					.indxResPrev div{
+						font-size:20px;
+						line-height: 23px
+					}
+
+				.indxResBot{
+					margin-top:10px;
+				}
+					.indxBotSponsor{
+						display: inline-block;
+						color:#666;
+						margin:5px 0 0 20px;
+						text-decoration: none
+					}
+						.indxBotSponsor:hover{
+							text-decoration: underline;
+							color: rgb(254,117,6)
+						}
+
+					.indxResBotBtn{
+						background-color: rgb(30,185,145);
+						border-radius: 4px;
+						box-shadow:0 1px 4px -1px black;
+						font-size:18px;
+						color:white;
+						line-height:30px;
+						padding:4px 15px 0 15px;
+						float:right;
+						text-decoration: none
+					}
+
+	input, textarea, select{
+		font-size:20px;
+		box-shadow:inset 0 0 0 1px rgba(0,0,0,0.1), inset 0 0 5px -2px black;
+		padding: 10px;
+		margin-bottom:5px;
+		border-radius:5px;
+		border:1px solid white;
+	}
+	textarea, select{
+		margin:15px 0;
+	}
+
+	.welcome{
+		font-size:30px;
+		font-weight: normal;
+		font-family: "Hero Light";
+		margin-top:20px;
+		color:rgb(0,6,76);
+	}
+
+		.logoimg{float:right;}
+
+		.manageBtns{
+			display: inline-block;
+			text-decoration: none;
+			color:#444;
+			margin:15px 15px 0 0;
+			line-height:60px;
+			font-size:24px;
+			text-align: center;
+			width:300px;
+			background-color:rgba(0,0,0,0.2);
+			box-shadow:inset 0 0 0 1px rgba(0,0,0,0.2);
+		}
+		.stats{
+			margin-top:10px;
+		}
+		.stats div{
+			font-size:20px;
+			font-family: "Hero Light";
+			line-height:30px;
+		}
+
+		.tableHolder{
+			margin-top:50px;
+		}
+
+			.tableHead .tkname, .tableHead .tkpending{
+				font-size:20px;
+				color: rgb(30,185,145);
+				text-decoration: underline
+			}
+
+		.tkimg{
+			width:80px;
+			height:80px;
+				display: inline-block;
+			background-size: cover;
+			border-radius: 4px
+		}
+
+		.tkname{
+			width:400px;
+			display: inline-block;
+		}
+			.tkname a{
+				display: inline-block;
+				font-size:28px;
+				vertical-align: top;
+				margin-left:10px;
+				padding-top:10px;
+			}
+		.tkpending{
+			width:200px;
+			display: inline-block;
+			vertical-align: top;
+			font-size:20px;
+		}
+
+		.spacer{
+			margin-top:10px;
+		}
+
+		.addKid{
+			display: inline-block;
+			color:#555;
+			border-radius: 4px;
+			margin:20px 0 0 0;
+			padding:10px 25px;
+			background-color:rgba(0,0,0,0.2);
+			cursor: pointer;
+			box-shadow:inset 0 0 0 1px #999;
+		}
+
+		.pendbox{
+			display: inline-block;
+			width:350px;
+			margin:20px 50px 0 0;
+			padding:30px;
+			border-radius:10px;
+			box-shadow:inset 0 0 0 1px rgba(0,0,0,0.1);
+			word-wrap:break-word;
+			background-color: rgba(0,0,0,0.05)
+		}
+			.pendbox .indxResBotBtn{
+				margin-top:20px;
+			}
+			.pendbox .indxResBotBtn:nth-child(4){
+				background-color: rgb(254,117,6);
+				float:left;
+			}
+
+		.sentto{
+			font-size:24px;
+		}
+			.sentto a, .sentfrom a, .sentitem a{
+				color:black;
+				line-height: 30px
+			}
+
+		.listing{
+			padding:20px;
+			box-shadow:inset 0 0 0 1px rgba(0,0,0,0.1);
+			border-radius:3px;
+			color:black;
+			font-size:20px;
+			cursor: pointer;
+			margin-top:15px;
+		}
+			.listing:hover{
+				background-color: rgba(0,0,0,0.1)
+			}
+			.listing div{
+				display: inline-block;
+				margin-right:15px;
+				vertical-align: top;
+				width:180px;
+			}
+			.listingimg{
+				background-size:cover;
+				height:60px;
+				background-position: middle middle;
+				border-radius:5px;
+				width:60px !important;
+				margin-right:20px !important;
+			}
+			.listingorg{
+				color:#999;
+			}

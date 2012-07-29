@@ -1,0 +1,41 @@
+extends layout
+
+block content
+	- var n = JSON.parse(list)
+	- for (var i=0,len=n.length;i<len;i++){
+		a(href='/see/' + n[i]._id + '/')
+			div(class='listing')
+				div(class='listingimg', style="background-image:url('" + n[i].child_img + "')")
+				div(class='listingname')= n[i].child_name
+				div(class='listingorg')= n[i].org_name
+				div(class='listingarticle')= n[i].article
+				div(class='listingcolor')= n[i].color
+	- }
+	br
+	br
+	h2 New request
+	form(action='/org/manage/child/' + JSON.parse(profile)._id + '/', method='POST')
+		#article
+			div Article
+			select(type='text', name='article')
+				option Shirt
+				option Jacket
+				option Pants
+				option Shoes
+		#color
+			div Color
+			select(type='text', name='color')
+				option White
+				option Red
+				option Orange
+				option Yellow
+				option Green
+				option Blue
+				option Purple
+				option Grey
+				option Brown
+				option Black
+		#details
+			textarea(type='text', name='details', placeholder='Additional details (optional)')
+		#submit
+			input(type='submit') Add Request
